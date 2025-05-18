@@ -1,8 +1,6 @@
 from abc import ABC, abstractmethod
 
-# ========================
-# Interface de gestión
-# ========================
+
 class IGestionAnimal(ABC):
     @abstractmethod
     def crear_animal(self, codigo, raza, edad):
@@ -20,9 +18,7 @@ class IGestionAnimal(ABC):
     def eliminar_animal(self, codigo):
         pass
 
-# ========================
-# Clase Animal
-# ========================
+
 class Animal:
     def __init__(self, codigo, raza, edad):
         self.codigo = codigo
@@ -42,9 +38,7 @@ class Animal:
     def __str__(self):
         return f"Código: {self.codigo}, Raza: {self.raza}, Edad: {self.edad} semanas"
 
-# ========================
-# Clase BaseDatos
-# ========================
+
 class BaseDatos(IGestionAnimal):
     def __init__(self):
         self.animales = []
@@ -115,9 +109,7 @@ class BaseDatos(IGestionAnimal):
         else:
             print("⚠️ Animal no encontrado.")
 
-# ========================
-# Menú Interactivo
-# ========================
+
 def mostrar_menu():
     print("\n===== SISTEMA DE REGISTRO - GRANJA DE POLLOS =====")
     print("1. Agregar nuevo pollo")
